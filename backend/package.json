@@ -1,0 +1,17 @@
+{
+  "name": "drip-lesson-1-6-api-server",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Учебный REST API для практики по HTTP, Fetch API и состояниям интерфейса",
+  "scripts": {
+    "dev": "json-server db.json --port 3000",
+    "start": "npm run dev"
+  },
+  "devDependencies": {
+    "json-server": "1.0.0-beta.15"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}
+

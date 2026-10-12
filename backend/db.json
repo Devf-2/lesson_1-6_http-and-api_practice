@@ -1,0 +1,26 @@
+{
+  "applications": [
+    {
+      "id": "1",
+      "name": "Анна Петрова",
+      "email": "anna@example.com",
+      "topic": "Доступные интерфейсы",
+      "createdAt": "2026-10-08T16:30:00.000Z"
+    },
+    {
+      "id": "2",
+      "name": "Максим Орлов",
+      "email": "maxim@example.com",
+      "topic": "Личный сайт-портфолио",
+      "createdAt": "2026-10-09T12:15:00.000Z"
+    },
+    {
+      "id": "3",
+      "name": "Элина Соколова",
+      "email": "elina@example.com",
+      "topic": "Городская мастерская",
+      "createdAt": "2026-10-10T09:45:00.000Z"
+    }
+  ]
+}
+

@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Практика по HTTP, REST API, Fetch API и состояниям интерфейса"
+    />
+    <title>Заявки на веб-мастерскую</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="page-header">
+      <a class="course-mark" href="#workspace" aria-label="Перейти к практике">
+        <span class="course-mark__number">1—6</span>
+        <span class="course-mark__text">Разработка web-интерфейсов</span>
+      </a>
+
+      <div class="lesson-label">HTTP · API · fetch</div>
+    </header>
+
+    <main class="page-shell" id="workspace">
+      <section class="intro" aria-labelledby="page-title">
+        <div class="intro__copy">
+          <p class="eyebrow">Frontend встречает backend</p>
+          <h1 id="page-title">Заявки на веб-мастерскую</h1>
+          <p class="intro__lead">
+            Данные больше не живут внутри страницы. Получите их с API, покажите
+            состояния интерфейса и отправьте новую заявку на сервер.
+          </p>
+        </div>
+
+        <div class="api-card" aria-label="Адрес API">
+          <span class="api-card__label">Endpoint</span>
+          <code>GET /applications</code>
+          <span class="api-card__url">localhost:3000</span>
+        </div>
+      </section>
+
+      <section class="workspace" aria-label="Рабочая область приложения">
+        <section class="applications-panel" aria-labelledby="applications-title">
+          <div class="panel-heading">
+            <div>
+              <p class="panel-kicker">Ответ API</p>
+              <h2 id="applications-title">Заявки участников</h2>
+            </div>
+
+            <button class="button button--secondary" id="reload-button" type="button">
+              Обновить
+            </button>
+          </div>
+
+          <div
+            class="request-status"
+            id="request-status"
+            data-state="idle"
+            role="status"
+            aria-live="polite"
+          >
+            Подключите frontend к API
+          </div>
+
+          <div class="application-list" id="application-list" hidden></div>
+
+          <div class="empty-state" id="empty-state" hidden>
+            <span class="empty-state__number">0</span>
+            <strong>Заявок пока нет</strong>
+            <span>Отправьте первую заявку через форму справа.</span>
+          </div>
+
+          <div class="network-note">
+            <strong>Проверяйте факты в Network</strong>
+            <span>метод → URL → status → response</span>
+          </div>
+        </section>
+
+        <form class="application-form" id="application-form">
+          <div class="panel-heading">
+            <div>
+              <p class="panel-kicker">Новый запрос</p>
+              <h2>Создать заявку</h2>
+            </div>
+            <span class="method-badge">POST</span>
+          </div>
+
+          <label class="field">
+            <span>Имя участника</span>
+            <input
+              name="name"
+              type="text"
+              minlength="2"
+              placeholder="Например, Анна"
+              autocomplete="name"
+              required
+            />
+          </label>
+
+          <label class="field">
+            <span>Email</span>
+            <input
+              name="email"
+              type="email"
+              placeholder="anna@example.com"
+              autocomplete="email"
+              required
+            />
+          </label>
+
+          <label class="field">
+            <span>Тема мастерской</span>
+            <select name="topic" required>
+              <option value="">Выберите тему</option>
+              <option value="Городская мастерская">Городская мастерская</option>
+              <option value="Доступные интерфейсы">Доступные интерфейсы</option>
+              <option value="Личный сайт-портфолио">Личный сайт-портфолио</option>
+            </select>
+          </label>
+
+          <button class="button button--primary" id="submit-button" type="submit">
+            Отправить в API
+          </button>
+
+          <p class="submit-status" id="submit-status" aria-live="polite">
+            Заполните форму после подключения GET-запроса
+          </p>
+        </form>
+      </section>
+
+      <section class="pipeline" aria-label="Путь данных">
+        <span>db.json</span>
+        <b>→</b>
+        <span>json-server</span>
+        <b>→</b>
+        <span>fetch</span>
+        <b>→</b>
+        <span>Response</span>
+        <b>→</b>
+        <span>JSON</span>
+        <b>→</b>
+        <span>DOM</span>
+      </section>
+    </main>
+
+    <footer class="page-footer">
+      <span>НИУ ВШЭ · ДРИП</span>
+      <span>Один API · два HTTP-метода · четыре состояния</span>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
